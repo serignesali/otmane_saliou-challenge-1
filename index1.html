@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://www.openlayers.org/api/OpenLayers.js"></script>
+    <script>
+        function init() {
+        
+          map = new OpenLayers.Map("basicMap");
+        
+          var mapnik = new OpenLayers.Layer.OSM();
+          var  epsg4326 =  new OpenLayers.Projection("EPSG:4326"); //WGS 1984 projection
+          var projectTo = new OpenLayers.Projection("EPSG:900913"); //The map projection (Spherical Mercator)
+        
+          map.addLayer(mapnik);
+          map.setCenter(new OpenLayers.LonLat(-7.62300,33.59349).transform(epsg4326,projectTo), 12);
+        }
+          </script>
+    <link rel="stylesheet" href="style.css">
+    <title>Otmane,saliou_challenge</title>
+</head>
+<body onload="init();">
+    <nav class="navbar navbar-expand-md navbar-light">
+        <img class="navbar-brand" src="LG.JPG" id="logo_custom" width="6%"  alt="logo">
+             <div class="collapse navbar-collapse " id="collapsibleNavbar">
+                 <ul class="navbar-nav ml-auto ">
+                  <li class="nav-item">
+                    <a class="nav-link btn btn-outline-dark m-4" href="#home">Acceuil</a>
+                  </li>
+                   <li class="nav-item">
+                     <a class="nav-link btn btn-outline-dark m-4" href="#about">Qui sommes-nous?</a>
+                   </li>
+                   <li class="nav-item">
+                     <a class="nav-link btn btn-outline-dark m-4" href="#services">Nos Services</a>
+                   </li>
+                   <li class="nav-item">
+                     <a class="nav-link btn btn-outline-dark m-4" href="#contact"> Nos Contact</a>
+                   </li>  
+                 </ul>
+             </div>  
+    </nav>
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1> Qui sommes-nous :</h1>
+                    <p>TANIO-GIS<strong> est une entreprise spécialisée dans les études d’ingénierie géomatique qui fournit divers solutions en drones dans plusieurs domaines.
+                      Parce qu’il est essentiel, pour la réussite et la pérennité de vos projets, que vous disposiez des meilleurs solutions géospatiales sur lesquels reposeront vos projets, nous nous engageons à réaliser nos prestations dans les règles de l’art.
+               Nous maîtrisons l’ensemble de la chaîne de production de nos études, à savoir : la maîtrise du matériel, des données, des méthodes et des logiciels. </strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2>Nos Services</h2>
+            <div class="row">  
+                <div class="col-xl-6">
+                    <h3> Géomatique </h3>
+                    <p>Nous transformons le monde réel de vos projets en un modèle numérique avec notre système d’information, ce qui permet de vous aider à prendre des décisions basées sur des données très précises.. </strong></p>
+                    <img class="img-thumbnail" src="Géomatique.jpg" alt="" />
+                </div>
+                <div class="col-xl-6">
+                    <h3>BTP</h3>        
+                    <p>L’utilisation des drones dans le domaine des bâtiments et travaux publiques permet de suivre, contrôler, visualiser et archiver l’évolution de vos projets d’une manière périodique quelque soit l’accécibilité à votre chantier. </strong></p>
+                    <img class="img-thumbnail" src="BTP.jpg" alt="" />
+                </div> 
+                <div class="col-xl-6">
+                    <h3> Industrie minière </h3>                   
+                    <p> Pour garantir la pérennité de vos projets minières ( gestion et exploitation) , nous vous assurons leur suivi et contrôle à travers nos solutions géospatiales. </strong></p>
+                    <img class="img-thumbnail" src="mine.jpg" alt=""/>
+                </div> 
+                <div class="col-xl-6">
+                    <h3>Agriculture de précision</h3>        
+                    <p>L’Agriculture Numérique exige l’interdisciplinarité, en effet la fusion entre les sciences agricoles et les technologies permet d'optimiser la production et le suivi de l'état des parcelles d'une façon régulière. </strong></p>
+                    <img  class="img-thumbnail" src="AP.jpg" alt="" >
+                </div> 
+          </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contactez-Nous</h2>
+        <h5>
+            Si vous souhaitez des renseignements, n'hésitez pas à remplir ce formulaire
+        </h5>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6">
+                    <form class="col-12">
+                        <input class="col-12" id="name" type="text" placeholder=" Nom complet">
+                        <input  class="col-12" id="email" type="text" placeholder="Courriel">
+                        <textarea  class="col-12" id="message" type="text" placeholder="Votre message"></textarea>                    <input  class="col-12"id="submit" type="submit" value="ENVOYER">
+                    </form>
+                </div>
+                <div class="col-xl-6 contact-info">
+                    <p><a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i class="fa fa-map-marker"></i></a> Hay El Mouhamadi ( Lastah ) B.P :271 - 38000 Taroudant , Maroc</p>
+                    <p><a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i class="fa fa-phone"></i></a> 0662049458</p>
+                    <p><a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button"><i class="fa fa-envelope"></i></a> tanio-gis@gmail.com</p>
+                </div>  
+            </div>
+            <br>
+            <div class="row">
+                <div id="basicMap" style="height: 400px; width:100%; margin:0">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center text-secondary">
+        <!-- Grid container -->
+        <div class="container p-4">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Facebook -->
+            <a class="btn btn-outline-secondary btn-floating m-1" href="#!" role="button"
+              ><i class="fa fa-facebook-f"></i
+            ></a>
+      
+            <!-- Twitter -->
+            <a class="btn btn-outline-secondary btn-floating m-1" href="#!" role="button"
+              ><i class="fa fa-twitter"></i
+            ></a>
+      
+            <!-- Google -->
+            <a class="btn btn-outline-secondary btn-floating m-1" href="#!" role="button"
+              ><i class="fa fa-google"></i
+            ></a>
+      
+            <!-- Instagram -->
+            <a class="btn btn-outline-secondary btn-floating m-1" href="#!" role="button"
+              ><i class="fa fa-instagram"></i
+            ></a>
+      
+            <!-- Linkedin -->
+            <a class="btn btn-outline-secondary btn-floating m-1" href="#!" role="button"
+              ><i class="fa fa-linkedin"></i
+            ></a>
+      
+            <!-- Github -->
+            <a class="btn btn-outline-secondary btn-floating m-1" href="#!" role="button"
+              ><i class="fa fa-github"></i
+            ></a>
+          </section>
+          <!-- Section: Social media -->
+
+      
+        </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3">
+          © 2021 Copyright:
+          <a class="text-secondary">TANIO-GIS</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
+</body>
+
+
+
